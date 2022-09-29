@@ -22,6 +22,7 @@ int main()
 			for (int i = 0; i < n; i++)
 			{
 				double nahodneCislo = 10 + (100 - 10) * (double)rand() / (RAND_MAX + 1);
+				cout << "\n" << nahodneCislo;
 				soucetPrvku += nahodneCislo;
 			}
 			cout << "\nSoucet vygenerovanych je: " << soucetPrvku;
@@ -32,6 +33,7 @@ int main()
 			while (i < n)
 			{
 				double nahodneCislo = 10 + (100 - 10) * (double)rand() / (RAND_MAX + 1);
+				cout << "\n" << nahodneCislo;
 				soucetPrvku += nahodneCislo;
 				i++;
 			}
@@ -40,24 +42,30 @@ int main()
 		case 'c':
 		{
 			int i = 0;
-			do
+			if (n!=0)
 			{
-				double nahodneCislo = 10 + (100 - 10) * (double)rand() / (RAND_MAX + 1);
-				soucetPrvku += nahodneCislo;
-				i++;
-			} while (i < n);
+				do
+				{
+					double nahodneCislo = 10 + (100 - 10) * (double)rand() / (RAND_MAX + 1);
+
+					cout << "\n" << nahodneCislo;
+
+					soucetPrvku += nahodneCislo;
+					i++;
+				} while (i < n);
+			}
 			cout << "\nSoucet vygenerovanych je: " << soucetPrvku;
-		}
+		}break;
 		case 'k':
 		{
-			cout << "Zvolili jste konec";
+			cout << "\nZvolili jste konec";
 		}
 		default:
 		{
 			cout << "\nSpatna volba";
 		}break;
 		}
-		cout << "Zadejte cislo n: ";
+		cout << "\nZadejte cislo n: ";
 		cin >> n;
 		cout << "a-Cyklem while\nb-Cyklem do while\nc-Cyklem for\nk-Konec\nZvolte si cim chcete pocitat: ";
 		cin >> volba;
